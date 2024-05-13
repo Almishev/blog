@@ -65,3 +65,14 @@
         <span class="copyright"> Copyright 2021 - Present</span>
     </div>
 </footer>
+
+<script>
+    function updateYear() {
+        var yearElement = document.querySelector('.copyright');
+        var currentYear = new Date().getFullYear();
+        yearElement.textContent = " Copyright " + currentYear;
+    }
+
+
+    updateYear();
+</script>
