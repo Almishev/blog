@@ -7,7 +7,7 @@ author: Anton
 date: 2024-05-13T15:42:13.295Z
 tags:
   - post
-image: /images/blog/bed.png
+image: /images/blog/background.png
 imageAlt: Home
 ---
 a﻿d  sa sfaf asf f sa fsa fas asf saf fas safd  fsa
