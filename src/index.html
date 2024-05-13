@@ -16,6 +16,7 @@ eleventyNavigation:
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
+
 <section id="hero">
   <div class="cs-container">
     <div class="cs-flex-group">
@@ -25,7 +26,25 @@ eleventyNavigation:
         Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh
         condimentum.
       </p>
-      <a href="" class="cs-button-solid">Explore More</a>
+      <!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true',
+      color: '#fbd75b',
+      label: 'Book instruktor',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+      
+
       <a href="" class="cs-button-transparent">
         <img
           class="cs-img"
