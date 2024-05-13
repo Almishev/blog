@@ -7,7 +7,7 @@ author: Almishev
 date: 2024-05-06T20:28:35.765Z
 tags:
   - post
-image: /images/blog/forest.png
+image: /images/blog/background.png
 imageAlt: Mine project
 ---
 S﻿AD aSDas asf sasffsa asdf
