@@ -20,7 +20,6 @@ eleventyNavigation:
 <section id="int-hero">
   <h1 id="home-h">Our Projects</h1>
   {% image './src/images/cabinets2.jpg', 'cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
-
 </section>
 
 <!-- ============================================ -->
@@ -66,8 +65,27 @@ eleventyNavigation:
     <h2 class="title">Направете го <br> С нас днес</h2>
     <p>
       Готови сте да изведем вашия бизнес на ново ниво? Нека започнем вашето дигитално пътешествие заедно.
-        </p>
+    </p>
     <a href="/contact.html" class="button-solid">Свържете се с нас днес..</a>
   </div>
   {% image './src/images/cabinets2.jpg', 'kitchen cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
 </section>
+
+<!-- Button to show Google Calendar -->
+<div class="container">
+  <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px; background-color: blue;">
+    <button id="show-calendar" class="button-solid">Make reservation</button>
+  </div>
+</div>
+
+<!-- Google Calendar Appointment Scheduling - initially hidden -->
+<div id="calendar-container" style="display: none; margin-bottom: 10px;">
+  <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true" style="border: 0; width: 100%; height: 600px;" frameborder="0"></iframe>
+</div>
+
+<script>
+  document.getElementById('show-calendar').addEventListener('click', function() {
+    document.getElementById('calendar-container').style.display = 'block';
+    this.style.display = 'none';
+  });
+</script>

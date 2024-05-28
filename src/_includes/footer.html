@@ -3,23 +3,6 @@
 <!-- ============================================ -->
 
 <footer id="footer">
-    <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true',
-      color: '#039BE5',
-      label: 'Насрочване на среща',
-      target,
-    });
-  });
-})();
-</script>
-<!-- end Google Calendar Appointment Scheduling -->
     <div class="container">
         <div class="left-section">
             <a class="logo" href="/"><img loading="lazy" decoding="async" src="/assets/images/logo-light.png" alt="logo" width="264" height="78"></a>
@@ -56,7 +39,11 @@
                     <li>Service1</li>
                     <li>Service2</li>
                     <li>Service4</li>
-                    <li>Service5</li>
+                    <li>
+                        <!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
+                    </li>
                 </ul>
                 <ul>
                     <li>
