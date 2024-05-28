@@ -7,7 +7,7 @@ author: Almishev
 date: 2024-05-06T20:28:35.765Z
 tags:
   - post
-image: /images/blog/background.png
+image: /images/blog/20240528_125507.jpg
 imageAlt: Mine project
 ---
 
