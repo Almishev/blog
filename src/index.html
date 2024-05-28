@@ -26,24 +26,10 @@ eleventyNavigation:
         Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh
         condimentum.
       </p>
-      <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true',
-      color: '#fbd75b',
-      label: 'Book instruktor',
-      target,
-    });
-  });
-})();
-</script>
-<!-- end Google Calendar Appointment Scheduling -->
       
+      <button id="show-calendar" class="cs-button-solid">
+        Explore more 
+      </button>
 
       <a href="https://poetic-tapioca-29736e.netlify.app/blog/" class="cs-button-transparent">
         <img
@@ -58,8 +44,13 @@ eleventyNavigation:
         Learn More
       </a>
     </div>
+     <!-- Google Calendar Appointment Scheduling - initially hidden -->
+<div id="calendar-container" style="display: none;  background-color: rgb(203, 192, 231);">
+  <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true" style="border: 0; width: 100%; height: 600px;" frameborder="0"></iframe>
+</div>
   </div>
 
+ 
   <!-- Background Image -->
   {% image './src/images/landing.jpg', 'mountains', 'cs-picture', 'eager', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
 </section>
@@ -344,4 +335,11 @@ eleventyNavigation:
         }
       });
   }
+</script>
+
+<script>
+  document.getElementById('show-calendar').addEventListener('click', function() {
+    document.getElementById('calendar-container').style.display = 'block';
+    this.style.display = 'none';
+  });
 </script>
