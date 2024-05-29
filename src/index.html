@@ -28,21 +28,19 @@ eleventyNavigation:
       </p>
       
       <button id="show-calendar" class="cs-button-solid">
-        Explore more 
+        Запази час 
       </button>
 
-      <a href="https://poetic-tapioca-29736e.netlify.app/blog/" class="cs-button-transparent">
-        <img
-          class="cs-img"
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-          alt="play icon"
-          width="17"
-          height="17"
-/>
-        Learn More
-      </a>
+      <button id="show-video" class="cs-button-transparent">
+        
+        Виж повече
+      </button>
+    </div>
+    <div id="video-container" style="display: none;">
+      <video id="promo-video" width="700" height="500" controls muted>
+        <source src="/assets/svgs/video-gym.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
      <!-- Google Calendar Appointment Scheduling - initially hidden -->
 <div id="calendar-container" style="display: none;  background-color: rgb(203, 192, 231);">
@@ -341,5 +339,17 @@ eleventyNavigation:
   document.getElementById('show-calendar').addEventListener('click', function() {
     document.getElementById('calendar-container').style.display = 'block';
     this.style.display = 'none';
+  });
+</script>
+
+<script>
+  document.getElementById('show-video').addEventListener('click', function() {
+    var videoContainer = document.getElementById('video-container');
+    var video = document.getElementById('promo-video');
+
+    videoContainer.style.display = 'block';
+    this.style.display = 'none';
+    
+    video.play();
   });
 </script>
