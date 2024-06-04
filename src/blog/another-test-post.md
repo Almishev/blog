@@ -14,7 +14,7 @@ author: Anton Almishev
 date: 2024-06-01T22:17:15.185Z
 tags:
   - post
-image: https://images.unsplash.com/photo-1670768563220-c13cfa7e1dbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80.jpg
+image: /images/blog/google-ads.jpg
 imageAlt: Google реклама
 ---
 * **Търсеща машина (Search Engine Advertising)**: Това е вид реклама, при който се показват обяви в резултатите от търсенето в Гугъл. Търсещата машина реклама е изключително ефективна, тъй като позволява на бизнесите да се появят пред потребителите, когато те активно търсят продукт или услуга, която те предлагат. Ключът към успеха в тази форма на реклама е правилното използване на ключови думи, релевантни за вашите продукти или услуги.
