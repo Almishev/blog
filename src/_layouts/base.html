@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,7 +45,7 @@
 
         <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
         <title>
-            {% if page.url == '/' %}
+            {% if page.url == '/'%}
                 {{ client.name }} | {{ tagTitle }} | {{ client.address.city }}, {{ client.address.county }}
             {% else %}
                 {{ tagTitle }} | {{ client.name }}
@@ -72,9 +72,15 @@
             document.addEventListener('scroll', (e) => {
                 const scroll = document.documentElement.scrollTop;
                 if (scroll >= 100) {
-                    document.querySelector('body').classList.add('scroll');
+                    document
+                        .querySelector('body')
+                        .classList
+                        .add('scroll')
                 } else {
-                    document.querySelector('body').classList.remove('scroll');
+                    document
+                        .querySelector('body')
+                        .classList
+                        .remove('scroll')
                 }
             });
         </script>

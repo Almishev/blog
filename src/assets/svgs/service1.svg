@@ -1,12 +1,5 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 4H18V44H1V4Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M18 25H47V44H18V25Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M33 25V44" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M22 32V36" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M1 19H18" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M14 9V14" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M14 24V29" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M36 29H44" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M33 33H47" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
-<path d="M42 10L46 14V16H34V14L38 10V4H42V10Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M35 18L24 30L19 25L13 32H35V18Z" fill="#4285F4"/>
+  <path d="M13 38H35C36.6569 38 38 36.6569 38 35V13C38 11.3431 36.6569 10 35 10H13C11.3431 10 10 11.3431 10 13V35C10 36.6569 11.3431 38 13 38Z" stroke="white" stroke-width="2"/>
+  <path d="M29 27H25V23H29V27Z" fill="white"/>
 </svg>
