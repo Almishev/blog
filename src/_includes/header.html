@@ -3,6 +3,25 @@
 <!-- ============================================ -->
 {% set navPages = collections.all | eleventyNavigation %}
 
+<style>
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+#language-toggle {
+    background-color: #726e7f;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+}
+
+</style>
+
 <div id="navigation">
     <div aria-hidden="true" class="background-color-div">
         <!--Този div се използва, за да преодолее проблем с z-index, където отворената
@@ -48,6 +67,7 @@
                 {%- endfor %}
             </ul>
         </nav>
+        
 
         <!--Превключвател за тъмен режим-->
         <button id="dark-mode-toggle">
@@ -56,8 +76,43 @@
             <img class="sun" aria-hidden="true" src="/assets/svgs/sun.svg" decoding="async" alt="слънце" width="15" height="15">
         </button>
         
+        <div class="language-switcher">
+            <button id="language-toggle">
+                <img src="/assets/images/bg-flag.png" alt="BG" width="20" height="15">
+            </button>
+        </div>
        
 
         
     </div>
 </div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const languageToggle = document.getElementById('language-toggle');
+    const currentFlag = languageToggle.querySelector('img');
+
+    languageToggle.addEventListener('click', function() {
+        const currentLang = currentFlag.alt;
+        let newLang, newFlagSrc;
+
+        if (currentLang === 'BG') {
+            newLang = 'EN';
+            newFlagSrc = '/assets/images/en-flag.png';
+        } else {
+            newLang = 'BG';
+            newFlagSrc = '/assets/images/bg-flag.png';
+        }
+
+        // Update the flag image
+        currentFlag.src = newFlagSrc;
+        currentFlag.alt = newLang;
+
+        // Redirect to the corresponding language page
+      //  const currentPageUrl = window.location.pathname;
+      //  const newUrl = `/${newLang.toLowerCase()}${currentPageUrl}`;
+       // window.location.href = newUrl;
+    });
+});
+
+</script>
