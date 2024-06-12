@@ -5,9 +5,19 @@
 
 <style>
 
+
+#google_translate_element {
+  display: none;  
+ 
+}
+  
+
+
+
 .language-switcher {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 #language-toggle {
@@ -49,7 +59,7 @@
         <nav id="navbar-menu" aria-label="основна навигация">
             <ul>
                 {%- for entry in navPages %}
-                    <li>
+                    <li style="margin-top: 5px;">
                         <a 
                         {% if entry.url == page.url %} class="active" {% endif %}
                         href="{{ entry.url }}"
@@ -63,9 +73,13 @@
                             {% else %}{{ entry.title }}
                             {% endif %}
                         </a>
+                        
                     </li>
+                    
                 {%- endfor %}
+               
             </ul>
+           
         </nav>
         
 
@@ -76,43 +90,39 @@
             <img class="sun" aria-hidden="true" src="/assets/svgs/sun.svg" decoding="async" alt="слънце" width="15" height="15">
         </button>
         
-        <div class="language-switcher">
-            <button id="language-toggle">
-                <img src="/assets/images/bg-flag.png" alt="BG" width="20" height="15">
-            </button>
-        </div>
+        <button id="language-toggle">
+            <img src="/assets/images/en-flag.png" alt="english" width="20" height="15">
+        </button>
+        <span id="google_translate_element"></span>
        
-
+       
         
     </div>
 </div>
 
 <script>
-   document.addEventListener('DOMContentLoaded', function () {
-    const languageToggle = document.getElementById('language-toggle');
-    const currentFlag = languageToggle.querySelector('img');
+    // Селектори за бутоните и елементите, които искате да скриете/покажете
+    var languageToggle = document.getElementById('language-toggle');
+    var googleTranslateElement = document.getElementById('google_translate_element');
 
+    // Прикрепване на слушател за клик събитие към бутона за превключване на езика
     languageToggle.addEventListener('click', function() {
-        const currentLang = currentFlag.alt;
-        let newLang, newFlagSrc;
-
-        if (currentLang === 'BG') {
-            newLang = 'EN';
-            newFlagSrc = '/assets/images/en-flag.png';
-        } else {
-            newLang = 'BG';
-            newFlagSrc = '/assets/images/bg-flag.png';
-        }
-
-        // Update the flag image
-        currentFlag.src = newFlagSrc;
-        currentFlag.alt = newLang;
-
-        // Redirect to the corresponding language page
-      //  const currentPageUrl = window.location.pathname;
-      //  const newUrl = `/${newLang.toLowerCase()}${currentPageUrl}`;
-       // window.location.href = newUrl;
+        // Скриване на бутона за превключване на езика
+        languageToggle.style.display = 'none';
+        // Показване на Google Translate елемента
+        googleTranslateElement.style.display = 'block';
     });
-});
+</script>
+<script>
+    // Селектори за бутоните и елементите, които искате да скриете/покажете
+    var languageToggle = document.getElementById('language-toggle');
+    var googleTranslateElement = document.getElementById('google_translate_element');
 
+    // Прикрепване на слушател за клик събитие към бутона за превключване на езика
+    languageToggle.addEventListener('click', function() {
+        // Скриване на бутона за превключване на езика
+        languageToggle.style.display = 'none';
+        // Показване на Google Translate елемента
+        googleTranslateElement.style.display = 'block';
+    });
 </script>
