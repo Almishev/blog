@@ -77,3 +77,17 @@ eleventyNavigation:
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('cs-form');
+    form.addEventListener('submit', function (event) {
+      // Изпращане на събитието за изпращане на формата към GA4
+      gtag('event', 'submit', {
+        'event_category': 'Контактна Форма',
+        'event_label': 'Свържете се с нас',
+        'value': 1
+      });
+    });
+  });
+</script>
