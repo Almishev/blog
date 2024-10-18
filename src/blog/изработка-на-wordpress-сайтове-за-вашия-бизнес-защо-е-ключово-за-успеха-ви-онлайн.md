@@ -1,7 +1,6 @@
 ---
-pageName: "Изработка на WordPress сайтове за вашия бизнес: Защо е ключово за
-  успеха ви онлайн?"
-blogTitle: изработка на wordpress сайт
+pageName: wordPress  webiste
+blogTitle: Изработка на wordpress сайт
 titleTag: wordpress уебсайт
 blogDescription: Изработка на wordpress уебсайт на достъпни цени. Ежемесечен
   анализ на резултати. Безплатна консултация.
