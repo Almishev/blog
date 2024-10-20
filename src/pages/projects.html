@@ -17,8 +17,36 @@ eleventyNavigation:
 <!--                    LANDING                   -->
 <!-- ============================================ -->
 
+<style>
+  .image-containerOne {
+    position: relative; /* Позволява позициониране на child елементи */
+    display: inline-block; /* Позволява на контейнера да се нагласява около изображението */
+}
+
+.custom-titleOne {
+    text-decoration: none; /* Премахва подчертаването */
+}
+
+.tooltipOne {
+    display: block; /* Винаги видим текст */
+    width: auto; /* Автоматична ширина */
+    background-color: rgba(85, 85, 85, 0.7); /* Прозрачен фон */
+    color: #decd0c !important; /* Цвят на текста */
+    text-align: center; /* Центрира текста */
+    border-radius: 5px; /* Заобляне на ъглите */
+    padding: 5px; /* Вътрешно отстояние */
+    position: absolute; /* Позволява точно позициониране */
+    z-index: 1; /* Подредба на слоевете */
+    top: 50%; /* Центрира по вертикала */
+    left: 50%; /* Центрира по хоризонтала */
+    transform: translate(-50%, -50%); /* Премества текста, за да бъде в центъра */
+}
+
+</style>
+
 <section id="int-hero">
-  <h1 id="home-h">Нашите проекти</h1>
+  <h1 id="home-h">Готови темплейти</h1>
+  <h2 style="color: #cec109;">Може  да се възползвате от хиляди готови темплейти, подходящи за вашия бизнес </h2>
   {% image './src/images/digital-agency3.jpg', 'cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
 </section>
 
@@ -29,108 +57,77 @@ eleventyNavigation:
 <section id="gallery">
   <div class="cs-container">
     <div class="cs-image-group">
-      <!-- Row 1-->
+      <!-- Row 1 -->
       <div class="cs-row cs-row-1">
-        {% image './src/images/portfolio/wp7.jpg', 'new hallway', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        {% image './src/images/portfolio/wp8.jpg', 'new home construction', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        {% image './src/images/portfolio/wp9.png', 'building a new wall', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/business/restaurant-landing-page/live-demo" rel="nofollow" target="_blank" title="Уебсайт за ресторант" class="custom-titleOne">
+            {% image './src/images/portfolio/restaurant-landing.jpg', 'restaurant website', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%} 
+            <h2 class="tooltipOne">Уебсайт за ресторант</h2>
+          </a>
+        </div>
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/business/coffee-shop-landing-page/live-demo" rel="nofollow" target="_blank" title="Уебсайт за магазин за кафе" class="custom-titleOne">
+            {% image './src/images/portfolio/coffee-shop-landing.jpg', 'coffee shop website', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за магазин за кафе</h2>
+          </a>
+        </div>
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/art-design/florist-shop-page/live-demo" rel="nofollow" target="_blank" title="Уебсайт за цветарски магазин" class="custom-titleOne">
+            {% image './src/images/portfolio/flower-shop-website.jpg', 'flower shop website', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за магазин за цветя</h2>
+          </a>
+        </div>
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout -->
       </div>
       <!-- Row 2 -->
       <div class="cs-row cs-row-2">
-        <!--
-        <div class="container" style="border: 2px;">
-  
-          <h2>Какво съдържа сайта за хотела:</h2>
-          <ul style="padding: 0; margin-top: 30px;">
-            <li>До шест информационни страници съдържащи: снимки, текстове, видео.</li>
-            <li>Административен панел за управление на блок статии.</li>
-            <li>Информация за местоположение и Google карта на адреса.</li>
-            <li>Контактна информация и форма за запитвания.</li>
-            <li>Мобилна версия на сайта.</li>
-            <li>Връзки към социалните мрежи и профили на хотела/къщата за гости.</li>
-          </ul>
-          
-          <p style="margin-right: 200px; margin-top: 10px;">
-           <b style="color: lightsalmon;">Промо Цена: 399 лв </b> .
-          </p>
-          
-          <p style="margin-top: 20px;">
-            Услугата включва изработване на хотелски сайт с посочените функционалности плюс:
-            <ul>
-              <li>Въвеждане на цялата текстова и снимкова информация.</li>
-              <li>Базова SEO оптимизация.</li>
-              <li>Вграждане на функционалност относно GDPR</li>
-            </ul>
-          </p>
-        
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/lifestyle/bed-and-breakfast-landing-page/live-demo" rel="nofollow" target="_blank" title="Уебсайт за хотел">
+            {% image './src/images/portfolio/hotel-website.jpg', 'hotel website', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%} 
+            <h2 class="tooltipOne">Уебсайт за хотел</h2>
+          </a>
         </div>
-        <div class="container" style="border: 2px;">
-  
-          <h2>Изработването на електронния магазин включва:</h2>
-          <ul style="list-style-type: none; padding: 0; margin-top: 30px;">
-            <li>Атрактивен, интуитивен и функционален дизайн, който изглежда еднакво добре на всякакви устройства</li>
-            <li>Въвеждане на информацията в онлайн магазина – продукти, информационни страници и др.</li>
-            <li>Базова оптимизация за търсачки (SEO)</li>
-            <li>Обучението за работа с административния панел на онлайн магазина.</li>
-            <li>Tехническа поддръжка и консултации, за да сте сигурни, че всичко ще работи добре.</li>
-    
-          </ul>
-          
-          <p style="margin-right: 200px; margin-top: 10px;">
-           <b style="color: lightsalmon;">Промо Цена: 799 лв </b> .
-          </p>
-          
-          <p style="margin-top: 20px;">
-           "Пирин Пиксел" изработва онлайн магазини с всички необходими функционалности върху основата на доказали се сред
-            стотици хиляди интернет магазини по целия свят платформи за онлайн търговия.
-          </p>
-        
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/business/dentist-landing-page/live-demo" target="_blank" rel="nofollow" title="Уебсайт за зъболекарски кабинет">
+            {% image './src/images/portfolio/dentist-website.jpg', 'dentist website', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%} 
+            <h2 class="tooltipOne">Уебсайт за зъболекар</h2>
+          </a>
         </div>
-        <div class="container" style="border: 2px;">
-  
-          <h2>Ново - Онлайн магазин на абонамент</h2>
-           <p>
-            Изработка на онлайн магазин без висока първоначална инвестиция. Вземете вашия
-            електронен магазин сега, напълно готов за ползване, като 
-            заплащате само месечен абонамент. 
-           </p>
-           <p>
-            Онлайн магазин, който е подходящ за тези, които искат бърз и лек електронен магазин,
-             без излишни функции и наистина лесен за ползване
-             - лесен за ползване админ панел, лесен процес на поръчка.
-           </p>
-          
-          <p style="margin-right: 200px; margin-top: 10px;">
-           <b>Първа вноска <span style="color: lightsalmon;">150 лв</span>  и всеки следващ месец <span style="color: lightsalmon;"> 50 лв</span></b>.
-          </p>
-          
-          <p style="margin-top: 20px;">
-            Гаранция:
-            Безплатни консултации при всякакви уеб въпроси.
-            Всеки сайт от <span style="color: lightsalmon;"> PirinPixel </span> е изцяло оптимизиран с пълна гаранция и поддръжка! 
-            Тест и преглед преди пускане онлайн с възможност за редакции!
-          </p>
-        
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/health-fitness/massage-therapy-landing-page/live-demo" target="_blank" rel="nofollow" title="Уебсайт за масажно студио">
+            {% image './src/images/portfolio/massage-website.jpg', 'massage website', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за масажно студио</h2>
+          </a>
         </div>
-      -->
-      {% image './src/images/portfolio/wp10.jpg', 'apartment addition', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%} 
-        {% image './src/images/portfolio/wp11.jpg', 'apartment addition', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%} 
-       {% image './src/images/portfolio/wp12.jpg', 'kew kitchen cabinets', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout -->
       </div>
       <!-- Row 3 -->
       <div class="cs-row cs-row-3">
-        {% image './src/images/portfolio/wp13jpg.jpg', 'new kitchen', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        {% image './src/images/portfolio/wp14.jpg', 'apartment addition', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
-        {% image './src/images/portfolio/wp15.jpg', 'kew kitchen cabinets', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
-
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/health-fitness/online-yoga-landing-page/live-demo" target="_blank" rel="nofollow" title="Уебсайт за йога клуб">
+            {% image './src/images/portfolio/yoga-website.jpg', 'yoga website', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за йога клуб</h2>
+          </a>
+        </div>
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/events/wedding-invitation-landing-page/live-demo" target="_blank" rel="nofollow" title="Уебсайт за събитие">
+            {% image './src/images/portfolio/event-website.jpg', 'website for event', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за събитие</h2>
+          </a>
+        </div>
+        <div class="image-containerOne">
+          <a href="https://www.elegantthemes.com/layouts/services/tattoo-shop-landing-page/live-demo" target="_blank" rel="nofollow" title="Уебсайт за клуб за татуировки">
+            {% image './src/images/portfolio/tatoo-website.jpg', 'tatto club website', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+            <h2 class="tooltipOne">Уебсайт за клуб за татуировки</h2>
+          </a>
+        </div>
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout -->
       </div>
     </div>
     <a href="/contact" class="button-solid">Свържете се с нас</a>
   </div>
 </section>
+
 
 <!-- ============================================ -->
 <!--             Final Call to Action             -->
