@@ -42,11 +42,18 @@ eleventyNavigation:
     transform: translate(-50%, -50%); /* Премества текста, за да бъде в центъра */
 }
 
+.responsive-heading {
+    color: #cec109;
+    margin: 60px;
+  }
+
+
+
 </style>
 
 <section id="int-hero">
   <h1 id="home-h">Готови темплейти</h1>
-  <h2 style="color: #cec109;">Може  да се възползвате от хиляди готови темплейти, подходящи за вашия бизнес </h2>
+  <p class="responsive-heading">Може  да се възползвате от хиляди готови темплейти, подходящи за вашия бизнес </p>
   {% image './src/images/digital-agency3.jpg', 'cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
 </section>
 
