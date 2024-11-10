@@ -27,7 +27,19 @@ eleventyNavigation:
 <!-- ============================================ -->
 
 <section id="cs-contact">
+  <div style="text-align: center;">
+  <button id="show-calendar" class="cs-button-solid">
+    Запази час за безплатна консултация
+  </button>
+  <!-- Google Calendar Appointment Scheduling - initially hidden -->
+<div id="calendar-container" style="display: none;  background-color: rgb(246, 214, 6);">
+  <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3LMGf20T_IAH58Wrcw0oMKVySt6XhSsJNA1eiSkP9V0pufefDB-8m33rElkqhq91UUcb8gEgsc?gv=true" style="border: 0; width: 100%; height: 600px;" frameborder="0"></iframe>
+</div>
+  </div>
+</div>
+
   <div class="cs-container">
+   
     <form id="cs-form" name="Contact Form" action="https://formspree.io/f/mnqebpza" method="post" >
       <div class="cs-content">
         <span class="cs-topper">Контакт</span>
@@ -87,5 +99,12 @@ eleventyNavigation:
         'value': 1
       });
     });
+  });
+</script>
+
+<script>
+  document.getElementById('show-calendar').addEventListener('click', function() {
+    document.getElementById('calendar-container').style.display = 'block';
+    this.style.display = 'none';
   });
 </script>
