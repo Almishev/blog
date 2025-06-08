@@ -115,6 +115,75 @@ eleventyNavigation:
   content: '✅';
   font-size: 1.5em;
 }
+
+/* DARK MODE */
+body.dark-mode .hotel-plan-section {
+  background: #222;
+  color: #fff;
+  border-color: #e7a200;
+}
+body.dark-mode .hotel-plan-section h2, body.dark-mode .hotel-plan-section h3 {
+  color: #e7a200;
+}
+body.dark-mode .hotel-plan-section li {
+  background: #333;
+  color: #fff;
+  border-left: 3px solid #e7a200;
+}
+body.dark-mode .hotel-plan-highlight {
+  background: #333;
+  color: #e7a200;
+  border-left: 5px solid #e7a200;
+}
+body.dark-mode .hotel-plan-success {
+  background: #333;
+  color: #ffe3a3;
+  border-left: 5px solid #e7a200;
+}
+body.dark-mode .hotel-plan-btn {
+  background: #e7a200;
+  color: #fff;
+}
+body.dark-mode .hotel-plan-btn:hover {
+  background: #b97c00;
+  color: #fff;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .cs-navigation {
+  background-color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link {
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link:hover {
+  color: #e7a200 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid {
+  background-color: #e7a200 !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid:hover {
+  background-color: #b97c00 !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-logo {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .hotel-plan-step {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #e7a200 !important;
+}
+
+/* Мобилна корекция за кутийките */
+@media (max-width: 600px) {
+  .hotel-plan-step {
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+  }
+}
 </style>
 
 <section id="int-hero">
@@ -134,7 +203,7 @@ eleventyNavigation:
 
   <h2>Какво съдържа един успешен маркетингов план?</h2>
   <ol>
-    <li><b>Резюме (Executive Summary):</b> Кратък преглед на основните цели и акценти за годината. Например: "През 2024 г. целим да увеличим директните резервации с 20% чрез нов уебсайт и активна кампания в социалните мрежи."</li>
+    <li><b>Резюме (Executive Summary):</b> Кратък преглед на основните цели и акценти за годината. Например: "През 2025 г. целим да увеличим директните резервации с 20% чрез нов уебсайт и активна кампания в социалните мрежи."</li>
     <li><b>Мисия и визия:</b> Какво ви отличава? Какво искате да постигнете в дългосрочен план?</li>
     <li><b>Анализ на пазара:</b> Кои са вашите конкуренти? Какви са тенденциите в региона? Какви са нуждите на гостите?</li>
     <li><b>Ценообразуване и позициониране:</b> Как се позиционирате спрямо конкурентите? Каква е вашата ценова стратегия – икономична, премиум или нишова?</li>
