@@ -1,0 +1,241 @@
+---
+layout: 'base.html'
+description: 'Работна тетрадка за хотелски уебсайт – практически насоки, примери и SEO съвети за повече директни резервации.'
+metaTitle: 'Работна тетрадка за хотелски уебсайт | Хотели'
+tagTitle: 'Уебсайт за хотели'
+preloadImg: '/images/website-workbook.jpg'
+preloadCSS: '/css/local.css'
+permalink: 'hotel-website-workbook/'
+eleventyNavigation:
+    key: Уебсайт за хотели
+    parent: За Хотели
+    order: 3
+---
+
+<style>
+.hotel-workbook-section {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  border: 2px solid #3bb143;
+  color: #222;
+}
+.hotel-workbook-section h2, .hotel-workbook-section h3 {
+  color: #3bb143;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.hotel-workbook-section h2:before {
+  content: '📖';
+  font-size: 1.3em;
+  margin-right: 0.3em;
+}
+.hotel-workbook-section h3:before {
+  content: '📝';
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+.hotel-workbook-section ul, .hotel-workbook-section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.hotel-workbook-section li {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+  border-left: 3px solid #b6e7c9;
+  padding-left: 0.7em;
+  background: #e7fbe7;
+  border-radius: 0.3em;
+  margin-top: 0.3em;
+}
+.hotel-workbook-highlight {
+  background: #e7fbe7;
+  border-left: 5px solid #3bb143;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #226d1b;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.hotel-workbook-highlight:before {
+  content: '💡';
+  font-size: 1.5em;
+}
+.hotel-workbook-btn {
+  display: inline-block;
+  background: #3bb143;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.9rem 2.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(59,177,67,0.12);
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+.hotel-workbook-btn:hover {
+  background: #226d1b;
+}
+.hotel-workbook-step {
+  background: #f7f7fa;
+  border: 2px dashed #3bb143;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.hotel-workbook-step .step-icon {
+  font-size: 2em;
+  margin-right: 0.7em;
+  flex-shrink: 0;
+}
+.hotel-workbook-success {
+  background: #fffbe6;
+  border-left: 5px solid #e7a200;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  color: #7a5c00;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  border-radius: 0.7em;
+}
+.hotel-workbook-success:before {
+  content: '✅';
+  font-size: 1.5em;
+}
+
+/* DARK MODE */
+body.dark-mode .hotel-workbook-section {
+  background: #222;
+  color: #fff;
+  border-color: #b6e7c9;
+}
+body.dark-mode .hotel-workbook-section h2, body.dark-mode .hotel-workbook-section h3 {
+  color: #b6e7c9;
+}
+body.dark-mode .hotel-workbook-section li {
+  background: #333;
+  color: #fff;
+  border-left: 3px solid #b6e7c9;
+}
+body.dark-mode .hotel-workbook-highlight {
+  background: #333;
+  color: #b6e7c9;
+  border-left: 5px solid #b6e7c9;
+}
+body.dark-mode .hotel-workbook-success {
+  background: #333;
+  color: #ffe3a3;
+  border-left: 5px solid #e7a200;
+}
+body.dark-mode .hotel-workbook-btn {
+  background: #b6e7c9;
+  color: #222;
+}
+body.dark-mode .hotel-workbook-btn:hover {
+  background: #3bb143;
+  color: #fff;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .cs-navigation {
+  background-color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link {
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link:hover {
+  color: #b6e7c9 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid {
+  background-color: #b6e7c9 !important;
+  color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid:hover {
+  background-color: #3bb143 !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-logo {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .hotel-workbook-step {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #b6e7c9 !important;
+}
+
+/* Мобилна корекция за кутийките */
+@media (max-width: 600px) {
+  .hotel-workbook-step {
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+</style>
+
+<section id="int-hero">
+  <h1 style="font-size: 2rem;">Работна тетрадка за хотелски уебсайт</h1>
+  
+  {% image './src/images/hotel-website-pic.jpg', 'Работна тетрадка за хотелски уебсайт', '', 'lazy', '(max-width: 850px) 850px, 1920px'%}
+</section>
+
+<section class="hotel-workbook-section">
+  <h2>Вашият таен инструмент за успешен хотелски уебсайт</h2>
+  <div class="hotel-workbook-highlight">
+    "Създайте уебсайт, който не само изглежда добре, но и продава!"
+  </div>
+  <p>
+    Работната тетрадка за хотелски уебсайт е създадена, за да ви помогне да изградите сайт, който впечатлява гостите и увеличава директните резервации. С нея ще получите практически насоки, шаблони и примери, които ще ви водят стъпка по стъпка през целия процес – от съдържанието до SEO оптимизацията.
+  </p>
+
+  <h2>Какво включва работната тетрадка?</h2>
+  <ul>
+    <li>Попълващи се шаблони за 7 ключови страници на хотелския сайт</li>
+    <li>Ръководство за откриване на уникалния бранд глас на вашия хотел</li>
+    <li>Практически съвети за писане, дизайн и SEO (включително чеклист за ключови думи)</li>
+    <li>Реални примери от успешни хотелски сайтове</li>
+  </ul>
+
+  <div class="hotel-workbook-step"><span class="step-icon">🖊️</span> <b>1. Попълнете шаблоните за всяка страница</b> – от начална до стаи и контакти.</div>
+  <div class="hotel-workbook-step"><span class="step-icon">🔎</span> <b>2. Открийте бранд гласа си</b> – направете сайта си разпознаваем и запомнящ се.</div>
+  <div class="hotel-workbook-step"><span class="step-icon">💡</span> <b>3. Използвайте SEO съветите</b> – за да се класирате по-добре в Google и да привличате повече гости.</div>
+  <div class="hotel-workbook-step"><span class="step-icon">📊</span> <b>4. Вдъхновете се от реални примери</b> – вижте как го правят най-добрите.</div>
+
+  <div class="hotel-workbook-success">
+    <b>Резултатът?</b> Уебсайт, който не само изглежда професионално, но и работи за вас – носи повече директни резервации и по-добро преживяване за гостите.
+  </div>
+
+  <h2>За кого е тази тетрадка?</h2>
+  <ul>
+    <li>За собственици и мениджъри на хотели, къщи за гости и апартаменти</li>
+    <li>За всеки, който иска да обнови или създаде хотелски сайт самостоятелно</li>
+    <li>За маркетолози и копирайтъри в туризма</li>
+  </ul>
+
+  <h2>Вземете работната тетрадка</h2>
+  <p>
+    Получавате я като дигитален продукт – веднага след поръчка ще получите инструкции за изтегляне. Всички примери и шаблони са адаптирани за българския пазар.
+  </p>
+  <a href="https://buymeacoffee.com/antonalmishev/e/418825" class="hotel-workbook-btn" rel="nofollow" target="_blank">Изтегли работната тетрадка</a>
+
+  
+</section> 

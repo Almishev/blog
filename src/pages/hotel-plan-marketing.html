@@ -1,0 +1,178 @@
+<style>
+.hotel-plan-section {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  border: 2px solid #e7a200;
+  color: #222;
+}
+.hotel-plan-section h2, .hotel-plan-section h3 {
+  color: #e7a200;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.hotel-plan-section h2:before {
+  content: '📋';
+  font-size: 1.3em;
+  margin-right: 0.3em;
+}
+.hotel-plan-section h3:before {
+  content: '📝';
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+.hotel-plan-section ul, .hotel-plan-section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.hotel-plan-section li {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+  border-left: 3px solid #ffe3a3;
+  padding-left: 0.7em;
+  background: #fffbe6;
+  border-radius: 0.3em;
+  margin-top: 0.3em;
+}
+.hotel-plan-highlight {
+  background: #fffbe6;
+  border-left: 5px solid #e7a200;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #7a5c00;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.hotel-plan-highlight:before {
+  content: '💡';
+  font-size: 1.5em;
+}
+.hotel-plan-btn {
+  display: inline-block;
+  background: #e7a200;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.9rem 2.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(231,162,0,0.12);
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+.hotel-plan-btn:hover {
+  background: #b97c00;
+}
+.hotel-plan-step {
+  background: #f7f7fa;
+  border: 2px dashed #e7a200;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.hotel-plan-step .step-icon {
+  font-size: 2em;
+  margin-right: 0.7em;
+  flex-shrink: 0;
+}
+.hotel-plan-success {
+  background: #e7fbe7;
+  border-left: 5px solid #3bb143;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  color: #226d1b;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  border-radius: 0.7em;
+}
+.hotel-plan-success:before {
+  content: '✅';
+  font-size: 1.5em;
+}
+
+/* DARK MODE */
+body.dark-mode .hotel-plan-section {
+  background: #222;
+  color: #fff;
+  border-color: #ffe3a3;
+}
+body.dark-mode .hotel-plan-section h2, body.dark-mode .hotel-plan-section h3 {
+  color: #ffe3a3;
+}
+body.dark-mode .hotel-plan-section li {
+  background: #333;
+  color: #fff;
+  border-left: 3px solid #ffe3a3;
+}
+body.dark-mode .hotel-plan-highlight {
+  background: #333;
+  color: #ffe3a3;
+  border-left: 5px solid #ffe3a3;
+}
+body.dark-mode .hotel-plan-success {
+  background: #333;
+  color: #b6e7c9;
+  border-left: 5px solid #3bb143;
+}
+body.dark-mode .hotel-plan-btn {
+  background: #ffe3a3;
+  color: #222;
+}
+body.dark-mode .hotel-plan-btn:hover {
+  background: #e7a200;
+  color: #fff;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .cs-navigation {
+  background-color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link {
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link:hover {
+  color: #ffe3a3 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid {
+  background-color: #ffe3a3 !important;
+  color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid:hover {
+  background-color: #e7a200 !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-logo {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .hotel-plan-step {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #ffe3a3 !important;
+}
+
+@media (max-width: 600px) {
+  .hotel-plan-step {
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+</style> 

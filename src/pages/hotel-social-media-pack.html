@@ -1,0 +1,240 @@
+---
+layout: 'base.html'
+description: 'Стартер пакет за социални мрежи за хотели – идеи, шаблони и инструменти за ефективно онлайн присъствие.'
+metaTitle: 'Стартер пакет за социални мрежи | Хотели'
+tagTitle: 'Социални мрежи за хотели'
+preloadImg: '/images/social-media-pack.jpg'
+preloadCSS: '/css/local.css'
+permalink: 'hotel-social-media-pack/'
+eleventyNavigation:
+    key: Социални мрежи за хотели
+    parent: За Хотели
+    order: 2
+---
+
+<style>
+.hotel-social-section {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  border: 2px solid #1da1f2;
+  color: #222;
+}
+.hotel-social-section h2, .hotel-social-section h3 {
+  color: #1da1f2;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.hotel-social-section h2:before {
+  content: '📱';
+  font-size: 1.3em;
+  margin-right: 0.3em;
+}
+.hotel-social-section h3:before {
+  content: '📝';
+  font-size: 1.1em;
+  margin-right: 0.3em;
+}
+.hotel-social-section ul, .hotel-social-section ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.hotel-social-section li {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+  border-left: 3px solid #b6e7f7;
+  padding-left: 0.7em;
+  background: #e7f7fd;
+  border-radius: 0.3em;
+  margin-top: 0.3em;
+}
+.hotel-social-highlight {
+  background: #e7f7fd;
+  border-left: 5px solid #1da1f2;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #176b8a;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.hotel-social-highlight:before {
+  content: '💡';
+  font-size: 1.5em;
+}
+.hotel-social-btn {
+  display: inline-block;
+  background: #1da1f2;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.9rem 2.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(29,161,242,0.12);
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+.hotel-social-btn:hover {
+  background: #176b8a;
+}
+.hotel-social-step {
+  background: #f7f7fa;
+  border: 2px dashed #1da1f2;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.hotel-social-step .step-icon {
+  font-size: 2em;
+  margin-right: 0.7em;
+  flex-shrink: 0;
+}
+.hotel-social-success {
+  background: #fffbe6;
+  border-left: 5px solid #e7a200;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  color: #7a5c00;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  border-radius: 0.7em;
+}
+.hotel-social-success:before {
+  content: '✅';
+  font-size: 1.5em;
+}
+
+/* DARK MODE */
+body.dark-mode .hotel-social-section {
+  background: #222;
+  color: #fff;
+  border-color: #1da1f2;
+}
+body.dark-mode .hotel-social-section h2, body.dark-mode .hotel-social-section h3 {
+  color: #1da1f2;
+}
+body.dark-mode .hotel-social-section li {
+  background: #333;
+  color: #fff;
+  border-left: 3px solid #1da1f2;
+}
+body.dark-mode .hotel-social-highlight {
+  background: #333;
+  color: #1da1f2;
+  border-left: 5px solid #1da1f2;
+}
+body.dark-mode .hotel-social-success {
+  background: #333;
+  color: #ffe3a3;
+  border-left: 5px solid #e7a200;
+}
+body.dark-mode .hotel-social-btn {
+  background: #1da1f2;
+  color: #fff;
+}
+body.dark-mode .hotel-social-btn:hover {
+  background: #176b8a;
+  color: #fff;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .cs-navigation {
+  background-color: #222 !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link {
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-nav-link:hover {
+  color: #1da1f2 !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid {
+  background-color: #1da1f2 !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-button-solid:hover {
+  background-color: #176b8a !important;
+  color: #fff !important;
+}
+body.dark-mode .cs-navigation .cs-logo {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .hotel-social-step {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #1da1f2 !important;
+}
+
+/* Мобилна корекция за кутийките */
+@media (max-width: 600px) {
+  .hotel-social-step {
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+</style>
+
+<section id="int-hero">
+  <h1 style="font-size: 2rem;">Стартер пакет за социални мрежи за хотели</h1>
+  {% image './src/images/hotel-media-pic.jpg', 'Стартер пакет за социални мрежи за хотели', '', 'lazy', '(max-width: 850px) 850px, 1920px'%}
+</section>
+
+<section class="hotel-social-section">
+  <h2>Вашият старт за успешен хотелски маркетинг в социалните мрежи</h2>
+  <div class="hotel-social-highlight">
+    "90 идеи за публикации, шаблони, календар и инструменти – всичко, от което се нуждаете, за да стартирате или развиете профилите си!"
+  </div>
+  <p>
+    Стартер пакетът за социални мрежи е създаден специално за хотелиери, които искат да изградят силно онлайн присъствие, да ангажират аудиторията си и да увеличат директните резервации чрез Facebook, Instagram и други платформи. Получавате готови идеи, шаблони и инструменти, които ще ви спестят време и ще ви дадат увереност да бъдете активни и креативни.
+  </p>
+
+  <h2>Какво включва пакетът?</h2>
+  <ul>
+    <li>90 идеи за публикации (достатъчни за 3 месеца напред)</li>
+    <li>Шаблони за игри, конкурси и ангажиращи постове</li>
+    <li>Календар за съдържание (Google Sheets/Excel)</li>
+    <li>Инструментариум с 50+ подбрани онлайн инструмента за създаване на съдържание, видео, анализ и още</li>
+  </ul>
+
+  <div class="hotel-social-step"><span class="step-icon">💬</span> <b>1. Използвайте готовите идеи</b> – никога повече няма да се чудите какво да публикувате.</div>
+  <div class="hotel-social-step"><span class="step-icon">📅</span> <b>2. Планирайте с календара</b> – бъдете последователни и организирани.</div>
+  <div class="hotel-social-step"><span class="step-icon">🏆</span> <b>3. Стартирайте игри и конкурси</b> – увеличете ангажираността и последователите.</div>
+  <div class="hotel-social-step"><span class="step-icon">🛠️</span> <b>4. Възползвайте се от инструментариума</b> – създавайте професионално съдържание с лекота.</div>
+
+  <div class="hotel-social-success">
+    <b>Резултатът?</b> Профили, които вдъхновяват, ангажират и карат гостите да избират именно вашия хотел.
+  </div>
+
+  <h2>За кого е този пакет?</h2>
+  <ul>
+    <li>За собственици и мениджъри на хотели, къщи за гости и апартаменти</li>
+    <li>За всеки, който иска да развие или стартира профилите си в социалните мрежи</li>
+    <li>За маркетолози и копирайтъри в туризма</li>
+  </ul>
+
+  <h2>Вземете стартовия пакет</h2>
+  <p>
+    Получавате го като дигитален продукт – веднага след поръчка ще получите инструкции за изтегляне. Всички идеи и шаблони са адаптирани за българския пазар.
+  </p>
+  <a href="https://buymeacoffee.com/antonalmishev/e/418822" class="hotel-social-btn" rel="nofollow" target="_blank">Изтегли стартовия пакет</a>
+
+  
+</section> 
