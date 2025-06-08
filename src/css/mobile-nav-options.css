@@ -129,7 +129,9 @@
     text-decoration: none;
     text-transform: uppercase;
     color: #000;
-    font-size: 1.1875em;
+    font-size: 0.85em !important;
+    line-height: 1.2em !important;
+    letter-spacing: 0 !important;
     text-align: center;
     display: inline-block;
     position: relative;
@@ -149,13 +151,16 @@
     z-index: -1;
   }
   #navigation #navbar-menu.open {
-    height: 19.125em;
+    height: 28em;
     padding-top: 1.25em;
     z-index: -100;
   }
   #navigation #navbar-menu.open ul li {
     opacity: 1;
     transform: translateY(0) rotateX(0);
+  }
+  #navigation #navbar-menu ul li:last-child {
+    margin-bottom: 4em;
   }
   #language-toggle {
     margin-left: 0.7em;
