@@ -736,4 +736,29 @@
   body.dark-mode #cta:after {
     display: none;
   }
+  
+  /* Dark mode styles for hotels page text */
+  body.dark-mode #reviews .cs-title {
+    color: #ffffff !important;
+  }
+  
+  body.dark-mode #reviews .cs-text {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  
+  body.dark-mode #pirinpixel-hotel-section h2 {
+    color: #ffffff !important;
+  }
+  
+  body.dark-mode #pirinpixel-hotel-section p {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Dark mode styles for the cards in pirinpixel-hotel-section */
+  body.dark-mode #pirinpixel-hotel-section div[style*="background: #f0f9ff"] p {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+  }
 }
