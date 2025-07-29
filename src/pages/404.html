@@ -1,0 +1,178 @@
+---
+layout: base
+permalink: /404/
+eleventyExcludeFromCollections: true
+---
+
+<section id="hero-1339">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">404 Грешка</span>
+            <h1 class="cs-title">Страницата не е намерена</h1>
+            <p class="cs-text">
+                Извиняваме се, но страницата, която търсите, не съществува или е преместена. 
+                Врънете се към началната страница или разгледайте нашите услуги.
+            </p>
+            <div class="cs-button-group">
+                <a href="/" class="button-solid">Начална страница</a>
+                <a href="/hotels/" class="button-solid">За Хотели</a>
+                <a href="/contact/" class="button-solid">Контакти</a>
+            </div>
+        </div>
+        <div class="cs-image-group">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/images/404-mobile.jpg">
+                <source media="(min-width: 601px)" srcset="/images/404.jpg">
+                <img loading="lazy" decoding="async" src="/images/404.jpg" alt="404 страница не намерена" width="522" height="581">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<style>
+    #hero-1339 {
+        padding: clamp(3rem, 7vw, 6rem) 0;
+        background: linear-gradient(180deg, var(--primaryLight) 0%, var(--white) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    #hero-1339 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+
+    #hero-1339 .cs-content {
+        max-width: 40rem;
+        flex: none;
+        width: 100%;
+    }
+
+    #hero-1339 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-decoration: thic;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    #hero-1339 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: left;
+        max-width: 100%;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+
+    #hero-1339 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: left;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0 0 2rem 0;
+        color: var(--bodyTextColor);
+        position: relative;
+    }
+
+    #hero-1339 .cs-button-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    #hero-1339 .cs-image-group {
+        font-size: min(2.5vw, 0.7em);
+        flex: none;
+        width: 50%;
+        max-width: 522px;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-1339 .cs-picture {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    #hero-1339 .cs-picture img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 100%;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode #hero-1339 {
+        background: linear-gradient(180deg, var(--dark) 0%, var(--medium) 100%);
+    }
+
+    body.dark-mode #hero-1339 .cs-title {
+        color: var(--bodyTextColorWhite);
+    }
+
+    body.dark-mode #hero-1339 .cs-text {
+        color: var(--bodyTextColorWhite);
+    }
+
+    /* Mobile styles */
+    @media only screen and (max-width: 991px) {
+        #hero-1339 .cs-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #hero-1339 .cs-content {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        #hero-1339 .cs-title {
+            text-align: center;
+        }
+
+        #hero-1339 .cs-text {
+            text-align: center;
+        }
+
+        #hero-1339 .cs-button-group {
+            justify-content: center;
+        }
+
+        #hero-1339 .cs-image-group {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #hero-1339 .cs-button-group {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #hero-1339 .cs-button-group .button-solid {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+</style> 
