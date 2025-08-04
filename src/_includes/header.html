@@ -24,6 +24,75 @@
     align-items: center;
 }
 
+/* Mega Menu Styles */
+.mega-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.mega-menu-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 280px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1000;
+    border-radius: 8px;
+    padding: 1rem 0;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.mega-menu-content::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #1a1a1a;
+}
+
+/* Hover behavior controlled by JavaScript */
+
+.mega-menu-content a {
+    color: #e5e7eb;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    border-bottom: 1px solid #333;
+    text-transform: lowercase !important;
+}
+
+.mega-menu-content a:last-child {
+    border-bottom: none;
+}
+
+.mega-menu-content a:hover {
+    background-color: #2d3748;
+    color: #FFBA19;
+}
+
+.mega-menu-content a.active {
+    background-color: #2d3748;
+    color: #FFBA19;
+    font-weight: 600;
+}
+
+
+
+/* Mega menu styles - consistent dark theme for both light and dark modes */
+
+
+
+/* Mobile responsive */
 @media only screen and (max-width: 1023px) {
   #navigation #navbar-menu ul li a {
     /*  font-size: 0.8em !important; */
@@ -33,6 +102,77 @@
   #navigation #navbar-menu ul li {
     margin-bottom: 0.9em !important;
   }
+  
+  .mega-menu {
+    position: relative;
+  }
+  
+  .mega-menu-content {
+    position: static;
+    display: none; /* Hidden by default on mobile */
+    box-shadow: none;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+    margin-top: 0;
+    transform: none;
+    border-left: 2px solid #FFBA19;
+    margin-left: 1rem;
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  
+  .mega-menu-content::before {
+    display: none;
+  }
+  
+  .mega-menu-content a {
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    font-size: 0.9em;
+    color: inherit;
+    text-transform: lowercase !important;
+    display: block !important;
+    margin-bottom: 0.2rem;
+    width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.4 !important;
+  }
+  
+  .mega-menu-content a:hover {
+    background-color: transparent;
+    color: #FFBA19;
+  }
+  
+  .mega-menu-content a:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 186, 25, 0.2);
+  }
+  
+  .mega-menu-content a.active {
+    background-color: transparent;
+    color: #FFBA19;
+    font-weight: 600;
+  }
+  
+  /* Show submenu when parent is active */
+  .mega-menu.active .mega-menu-content {
+    display: block;
+  }
+  
+  body.dark-mode .mega-menu-content {
+    background-color: transparent;
+    border: none;
+  }
+  
+  body.dark-mode .mega-menu-content a {
+    color: inherit;
+    border-bottom: none;
+  }
+  
+
 }
 </style>
 
@@ -58,28 +198,57 @@
                 <ul>
                     {%- for entry in navPages %}
                         <li style="margin-top: 5px;">
-                            <a 
-                                {% if entry.url == page.url %} class="active" {% endif %}
-                                href="{{ entry.url }}"
-                                title="Дигитална агенция Pirin Pixel - 
-                                {% if entry.title == 'Home' %}Начало{% 
-                                elif entry.title == 'About Us' %}За нас{% 
-                                elif entry.title == 'Projects' %}Проекти{% 
-                                elif entry.title == 'Reviews' %}Услуги{% 
-                                elif entry.title == 'Blog' %}Блог{% 
-                                elif entry.title == 'Contact' %}Контакт{% 
-                                else %}{{ entry.title }}{% 
-                                endif %}"
-                            >
-                                {% if entry.title == "Home" %}Начало
-                                {% elif entry.title == "About Us" %}За нас
-                                {% elif entry.title == "Projects" %}Проекти
-                                {% elif entry.title == "Reviews" %}Услуги
-                                {% elif entry.title == "Blog" %}Блог
-                                {% elif entry.title == "Contact" %}Контакт
-                                {% else %}{{ entry.title }}
-                                {% endif %}
-                            </a>
+                            {% if entry.title == "За Хотели" %}
+                                <div class="mega-menu">
+                                    <a 
+                                        {% if entry.url == page.url %} class="active" {% endif %}
+                                        href="{{ entry.url }}"
+                                        title="Дигитална агенция Pirin Pixel - За Хотели"
+                                    >
+                                        За Хотели
+                                    </a>
+                                    <div class="mega-menu-content">
+                                        <a href="/hotels/" {% if page.url == '/hotels/' %} class="active" {% endif %} title="Маркетинг за хотели - Професионални решения">
+                                            Маркетинг за хотели
+                                        </a>
+                                        <a href="/pirinpixel-hotel/" {% if page.url == '/pirinpixel-hotel/' %} class="active" {% endif %} title="Резервационна система за хотели - Система за управление">
+                                            Резервационна система
+                                        </a>
+                                        <a href="/hotel-marketing-plan/" {% if page.url == '/hotel-marketing-plan/' %} class="active" {% endif %} title="Маркетинг план - Ръководство и шаблон">
+                                            Маркетинг план
+                                        </a>
+                                        <a href="/hotel-website-workbook/" {% if page.url == '/hotel-website-workbook/' %} class="active" {% endif %} title="Работна тетрадка - Дигитален маркетинг">
+                                            Работна тетрадка
+                                        </a>
+                                        <a href="/hotel-social-media-pack/" {% if page.url == '/hotel-social-media-pack/' %} class="active" {% endif %} title="Социални мрежи - Управление и стратегии">
+                                            Социални мрежи
+                                        </a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <a 
+                                    {% if entry.url == page.url %} class="active" {% endif %}
+                                    href="{{ entry.url }}"
+                                    title="Дигитална агенция Pirin Pixel - 
+                                    {% if entry.title == 'Home' %}Начало{% 
+                                    elif entry.title == 'About Us' %}За нас{% 
+                                    elif entry.title == 'Projects' %}Проекти{% 
+                                    elif entry.title == 'Reviews' %}Услуги{% 
+                                    elif entry.title == 'Blog' %}Блог{% 
+                                    elif entry.title == 'Contact' %}Контакт{% 
+                                    else %}{{ entry.title }}{% 
+                                    endif %}"
+                                >
+                                    {% if entry.title == "Home" %}Начало
+                                    {% elif entry.title == "About Us" %}За нас
+                                    {% elif entry.title == "Projects" %}Проекти
+                                    {% elif entry.title == "Reviews" %}Услуги
+                                    {% elif entry.title == "Blog" %}Блог
+                                    {% elif entry.title == "Contact" %}Контакт
+                                    {% else %}{{ entry.title }}
+                                    {% endif %}
+                                </a>
+                            {% endif %}
                         </li>
                     {%- endfor %}
                 </ul>
@@ -111,4 +280,60 @@
         // Показване на Google Translate елемента
         googleTranslateElement.style.display = 'block';
     });
+
+    // Mega menu hover logic with delay
+    const megaMenu = document.querySelector('.mega-menu');
+    const megaMenuContent = document.querySelector('.mega-menu-content');
+    let hideTimeout;
+
+    if (megaMenu && megaMenuContent) {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth <= 1023;
+        
+        if (!isMobile) {
+            // Desktop behavior - hover with delay
+            megaMenu.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                megaMenuContent.style.display = 'block';
+            });
+
+            megaMenu.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    megaMenuContent.style.display = 'none';
+                }, 200); // 200ms delay
+            });
+
+            megaMenuContent.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+            });
+
+            megaMenuContent.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(function() {
+                    megaMenuContent.style.display = 'none';
+                }, 200); // 200ms delay
+            });
+        } else {
+            // Mobile behavior - click to toggle
+            const megaMenuLink = megaMenu.querySelector('a');
+            
+            megaMenuLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                megaMenu.classList.toggle('active');
+                
+                if (megaMenu.classList.contains('active')) {
+                    megaMenuContent.style.display = 'block';
+                } else {
+                    megaMenuContent.style.display = 'none';
+                }
+            });
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const newIsMobile = window.innerWidth <= 1023;
+            if (newIsMobile !== isMobile) {
+                location.reload(); // Reload to reinitialize event listeners
+            }
+        });
+    }
 </script>
