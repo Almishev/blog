@@ -61,7 +61,7 @@
 /* Hover behavior controlled by JavaScript */
 
 .mega-menu-content a {
-    color: #e5e7eb;
+    color: #ffffff !important;
     padding: 12px 20px;
     text-decoration: none;
     display: block;
@@ -132,7 +132,7 @@
     padding-bottom: 0.5rem;
     border-bottom: none;
     font-size: 0.9em;
-    color: inherit;
+    color: #ffffff !important;
     text-transform: lowercase !important;
     display: block !important;
     margin-bottom: 0.2rem;
@@ -140,6 +140,27 @@
     white-space: normal !important;
     word-wrap: break-word !important;
     line-height: 1.4 !important;
+  }
+  
+  /* Force white text for all mega menu items */
+  .mega-menu-content a,
+  .mega-menu-content a:link,
+  .mega-menu-content a:visited {
+    color: #ffffff !important;
+  }
+  
+  /* Additional specificity to override any other CSS */
+  body .mega-menu-content a {
+    color: #ffffff !important;
+  }
+  
+  /* Maximum specificity for mobile */
+  @media only screen and (max-width: 1023px) {
+    .mega-menu-content a,
+    .mega-menu-content a:link,
+    .mega-menu-content a:visited {
+      color: #ffffff !important;
+    }
   }
   
   .mega-menu-content a:hover {
@@ -167,9 +188,36 @@
     border: none;
   }
   
-  body.dark-mode .mega-menu-content a {
-    color: inherit;
-    border-bottom: none;
+  /* Consistent white text for all themes - overriding all other rules */
+  .mega-menu-content a,
+  .mega-menu-content a:link,
+  .mega-menu-content a:visited {
+    color: #ffffff !important;
+  }
+  
+  .mega-menu-content a:hover {
+    color: #FFBA19 !important;
+  }
+  
+  .mega-menu-content a.active {
+    color: #FFBA19 !important;
+  }
+  
+  /* Force white text regardless of theme */
+  body .mega-menu-content a {
+    color: #ffffff !important;
+  }
+  
+  /* Maximum specificity to override any other CSS */
+  body#navigation nav#navbar-menu ul li div.mega-menu div.mega-menu-content a {
+    color: #ffffff !important;
+  }
+  
+  /* Additional specificity for mobile */
+  @media only screen and (max-width: 1023px) {
+    body#navigation nav#navbar-menu ul li div.mega-menu div.mega-menu-content a {
+      color: #ffffff !important;
+    }
   }
   
 
