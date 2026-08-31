@@ -4,7 +4,7 @@ blogTitle: Изработка на wordpress сайт
 titleTag: "изработка на wordpress  уебсайт "
 blogDescription: Изработка на wordpress уебсайт на достъпни цени. Ежемесечен
   анализ на резултати. Безплатна консултация.
-author: Anton Almishev
+author: Антон Алмишев
 date: 2024-10-18T09:05:01.065Z
 tags:
   - post

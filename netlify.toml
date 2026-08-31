@@ -6,6 +6,18 @@
   NODE_VERSION = "18"
 
 [[redirects]]
+  from = "https://pirinpixel.com/*"
+  to = "https://www.pirinpixel.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://pirinpixel.com"
+  to = "https://www.pirinpixel.com/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
@@ -30,4 +42,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Role = ["admin"]} 
+  conditions = {Role = ["admin"]}

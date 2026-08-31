@@ -58,7 +58,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/admin');
   eleventyConfig.addPassthroughCopy('./src/_redirects');
   eleventyConfig.addPassthroughCopy({ './src/robots.txt': '/robots.txt' });
-  eleventyConfig.addPassthroughCopy({ './src/sitemap.xml': '/sitemap.xml' });
 
   // open on npm start and watch CSS files for changes - doesn't trigger 11ty rebuild
   eleventyConfig.setBrowserSyncConfig({
@@ -71,8 +70,22 @@ module.exports = function (eleventyConfig) {
 
   // normally, 11ty will render dates on blog posts in full JSDate format (Fri Dec 02 18:00:00 GMT-0600). That's ugly
   // this filter allows dates to be converted into a normal, locale format. view the docs to learn more (https://moment.github.io/luxon/api-docs/index.html#datetime)
+  eleventyConfig.addFilter('dump', (value) => JSON.stringify(value));
+
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
+  eleventyConfig.addFilter('isoDate', (dateObj) => {
+    if (!dateObj) return '';
+    const formatted = DateTime.fromJSDate(new Date(dateObj)).toISODate();
+    return formatted || '';
+  });
+
+  eleventyConfig.addFilter('isoDateTime', (dateObj) => {
+    if (!dateObj) return '';
+    const formatted = DateTime.fromJSDate(new Date(dateObj)).toUTC().toISO();
+    return formatted || '';
   });
 
   return {

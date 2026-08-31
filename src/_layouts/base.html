@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Swap our for actual link-->
-    <link rel="canonical" href="https://www.pirinpixel.com{{ page.url }}">
+    <link rel="canonical" href="https://{{ client.domain }}{{ page.url }}">
 
     <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="">
 
     <!--Social Media Display-->
+    {% set ogImage = "https://" + client.domain + (image if image else "/assets/images/pirin-pixel-yellow.png") %}
     <meta property="og:title" content="{{ metaTitle }}"/>
     <meta property="og:description" content="{{ description }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://www.pirinpixel.com{{ page.url }}"/>
-    <meta property="og:image" content="https://www.pirinpixel.com/assets/images/pirin-pixel-yellow.png"/>
-    <meta property="og:image:secure_url" content="/images/social.jpg"/>
+    <meta property="og:type" content="{{ 'article' if blogTitle else 'website' }}"/>
+    <meta property="og:locale" content="bg_BG"/>
+    <meta property="og:url" content="https://{{ client.domain }}{{ page.url }}"/>
+    <meta property="og:image" content="{{ ogImage }}"/>
+    <meta property="og:image:secure_url" content="{{ ogImage }}"/>
 
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/test-icon.png">
@@ -43,14 +44,63 @@
 
     <!--Put analytics tag here at the bottom to prevent it from render blocking-->
 
-    <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
     <title>
-        {% if page.url == '/'%}
-            {{ client.name }} | {{ tagTitle }} | {{ client.address.city }}, {{ client.address.county }}
+        {% if page.url == '/' %}
+            {{ metaTitle }} | {{ client.address.city }}, {{ client.address.county }}
         {% else %}
-            {{ tagTitle }} | {{ client.name }}
+            {{ metaTitle }} | {{ client.name }}
         {% endif %}
     </title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "name": {{ client.name | dump | safe }},
+      "url": "https://{{ client.domain }}/",
+      "logo": "https://{{ client.domain }}/assets/images/pirin-pixel-yellow.png",
+      "image": "https://{{ client.domain }}/assets/images/pirin-pixel-yellow.png",
+      "email": {{ client.email | dump | safe }},
+      "telephone": {{ client.telephone | dump | safe }},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ client.address.street | dump | safe }},
+        "addressLocality": {{ client.address.city | dump | safe }},
+        "addressRegion": {{ client.address.region | dump | safe }},
+        "postalCode": {{ client.address.postcode | dump | safe }},
+        "addressCountry": "BG"
+      },
+      "areaServed": ["Гоце Делчев", "Банско", "Пирин", "България"]
+    }
+    </script>
+    {% if blogTitle %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ blogTitle | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "image": {{ ogImage | dump | safe }},
+      "datePublished": {{ date | isoDateTime | dump | safe }},
+      "author": {
+        "@type": "Person",
+        "name": "Антон Алмишев"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ client.name | dump | safe }},
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://{{ client.domain }}/assets/images/pirin-pixel-yellow.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://{{ client.domain }}{{ page.url }}"
+      }
+    }
+    </script>
+    {% endif %}
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYMBY99TZ1"></script>
 <script>

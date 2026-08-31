@@ -3,13 +3,15 @@
   "email": "antonalmishev123@gmail.com",
   "phone": "0877382224",
   "phoneFormatted": "(+359) 877-382-224",
+  "telephone": "+359877382224",
   "address": {
-    "lineOne": "Гоце Делчев, ул. Пирин №12",
-    "lineTwo": "с. Мосомище, ул. Раковски №1",
+    "street": "ул. Георги Раковски №1",
+    "lineOne": "Гоце Делчев, ул. Георги Раковски №1",
     "city": "Гоце Делчев",
+    "region": "Благоевград",
     "county": "България",
-    "postcode": "2190",
+    "postcode": "2900",
     "mapLink": "https://maps.app.goo.gl/xw8GzrEgNejXMg6n7"
   },
-  "domain": "wwww.pirinpixel.com"
+  "domain": "www.pirinpixel.com"
 }

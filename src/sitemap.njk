@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+{%- set u = item.url %}
+{%- if u and u != '/sitemap.xml' and u != '/404.html' and u != '/test-404.html' and u.indexOf('/admin') != 0 %}
+  <url>
+    <loc>https://www.pirinpixel.com{{ u }}</loc>
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    <priority>{{ '1.00' if u == '/' else '0.80' }}</priority>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

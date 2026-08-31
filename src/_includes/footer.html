@@ -24,13 +24,13 @@
             <ul>
                
                 <li>
-                    <a href="/contact">Гоце Делчев 2190</a>
+                    <a href="{{ client.address.mapLink }}">{{ client.address.city }} {{ client.address.postcode }}</a>
                 </li>
                 <li>
-                    <a href="tel:+359877382224">Tел: (+359) 877-382-224</a>
+                    <a href="tel:{{ client.telephone }}">Тел: {{ client.phoneFormatted }}</a>
                 </li>
                 <li>
-                    <a href="mailto:antonalmishev123@gmail.com">Кликнете, за да изпратите имейл</a>
+                    <a href="mailto:{{ client.email }}">{{ client.email }}</a>
                 </li>
             </ul>
         </div>
@@ -41,22 +41,22 @@
                         <h2>Информация</h2>
                     </li>
                     <li>
-                        <a href="/" title="Изработка на уебсайт град Банско">Начало</a>
+                        <a href="/">Начало</a>
                     </li>
                     <li>
-                        <a href="/about" title="Дигитална агенция Банско">За нас</a>
+                        <a href="/about">За нас</a>
                     </li>
                     <li>
-                        <a href="/projects" title="Дигитална реклама Банско">Проекти</a>
+                        <a href="/projects">Проекти</a>
                     </li>
                     <li>
-                        <a href="/reviews" title="Дигитална агенция услуги">Услуги</a>
+                        <a href="/reviews">Услуги</a>
                     </li>
                     <li>
-                        <a href="/blog" title="Информация за Дигитална Агенция">Блог</a>
+                        <a href="/blog">Блог</a>
                     </li>
                     <li>
-                        <a href="/contact" title="Контакт с уебсайт разработка Банско">Контакти</a>
+                        <a href="/contact">Контакти</a>
                     </li>
                 </ul>
                 <ul>
@@ -106,7 +106,7 @@
 
     <div class="credit">
         <span>Дизайн и разработка от</span>
-        <a href="https://pirinpixel.com" target="_blank" rel="noopener">Pirin Pixel Digital Solutions</a>
+        <a href="https://www.pirinpixel.com" rel="noopener">Pirin Pixel Digital Solutions</a>
         <span class="copyright"> Copyright - <script>document.write(new Date().getFullYear())</script> 
     </div>
 </footer>
