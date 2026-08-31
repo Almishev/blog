@@ -1,0 +1,17 @@
+{% if faq %}
+<section id="faq" class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-title">Често задавани въпроси</h2>
+    <dl class="faq-list">
+      {%- for item in faq %}
+      <div class="faq-item">
+        <dt>
+          <h3 class="faq-q">{{ item.q }}</h3>
+        </dt>
+        <dd class="faq-a">{{ item.a }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+{% endif %}

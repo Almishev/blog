@@ -11,7 +11,8 @@
     "region": "Благоевград",
     "county": "България",
     "postcode": "2900",
-    "mapLink": "https://maps.app.goo.gl/xw8GzrEgNejXMg6n7"
+    "mapLink": "https://maps.app.goo.gl/xw8GzrEgNejXMg6n7",
+    "mapEmbed": "https://maps.google.com/maps?q=ul.+Georgi+Rakovski+1,+Gotse+Delchev+2900&hl=bg&z=16&output=embed"
   },
   "domain": "www.pirinpixel.com"
 }

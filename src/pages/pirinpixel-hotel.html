@@ -1,7 +1,7 @@
 ---
 layout: 'base.html'
-description: 'pirinpixel-hotel - Интелигентна система за управление на хотелски бизнес. Пълнофункционална уеб платформа за автоматизация на резервации и управление на хотели.'
-metaTitle: 'PirinPixel | Система за управление на хотелски бизнес'
+description: 'Резервационна система за хотели и къщи за гости. PirinPixel Hotel – наличност, резервации през вашия сайт, без комисиона към Booking. Внедряване онлайн.'
+metaTitle: 'Резервационна система за хотели | PirinPixel Hotel'
 tagTitle: 'PirinPixel Hotel'
 preloadImg: '/images/hotel-website-pic.jpg'
 preloadCSS: '/css/local.css'
@@ -10,6 +10,17 @@ eleventyNavigation:
     key: PirinPixel Hotel
     parent: За Хотели
     order: 5
+faq:
+  - q: Какво включва пакетът?
+    a: Пълен изходен код на frontend и backend, документация за инсталация, примерна база данни, персонализация според обекта и обучение за администратори.
+  - q: Колко време отнема внедряването?
+    a: Базово внедряване 2–3 работни дни, персонализация обикновено 1–2 седмици. До пълна работа често са 2–3 седмици, според сложността.
+  - q: Има ли комисиона към Booking?
+    a: Не. Гостите резервират през вашия сайт. Комисионите към Booking и Airbnb отпадат за тези резервации.
+  - q: Подходяща ли е за къща за гости, не само за хотел?
+    a: Да. Системата е за хотели, къщи за гости и места за настаняване. Внедряването е онлайн, за обекти в цяла България.
+  - q: Каква поддръжка има?
+    a: Помощ при инсталация и настройка, обучение, консултации за процесите и достъп до обновления.
 ---
 
 <style>
@@ -36,6 +47,13 @@ eleventyNavigation:
   color: #ffffff;
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.phegon-hero .phegon-kicker {
+  color: #fbbf24;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .phegon-section {
   background: #fff;
@@ -229,20 +247,39 @@ body.dark-mode .phegon-hero p {
 }
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PirinPixel Hotel",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Резервационна система за хотели и къщи за гости. Наличност и резервации през собствения сайт, без комисиона към Booking.",
+  "provider": {
+    "@type": "Organization",
+    "name": "PirinPixel",
+    "url": "https://www.pirinpixel.com/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.pirinpixel.com/pirinpixel-hotel/"
+  }
+}
+</script>
+
 <section class="phegon-hero">
   <div class="container">
-    <h2 style="color: #fbbf24; font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">ПРОФЕСИОНАЛНА РЕЗЕРВАЦИОННА СИСТЕМА</h2>
-    <h1>PirinPixel Hotel - Система за управление на хотели и резервации</h1>
-    <p>Интелигентна уеб платформа за автоматизация на резервации и управление на хотели, къщи за гости и места за настаняване. Готово за продажба решение с пълен изходен код и документация.</p>
+    <p class="phegon-kicker">Професионална резервационна система</p>
+    <h1>PirinPixel Hotel – система за управление на хотели и резервации</h1>
+    <p>Наличност и резервации през вашия сайт, без комисиона към посредник. За хотели и къщи за гости в България. Готово решение с код и документация, внедряване онлайн.</p>
   </div>
 </section>
 
 <section class="phegon-section">
   <h2>За какво служи приложението?</h2>
   <p>
-    PirinPixel Hotel е пълнофункционална уеб платформа, която трансформира начина на работа на хотели, къщи за гости и места за настаняване. 
-    Това е готово за продажба решение, което автоматизира всички процеси от резервиране до управление, 
-    спестявайки време и ресурси на собствениците на бизнеса.
+    PirinPixel Hotel автоматизира резервациите и управлението на стаи. Гостите виждат наличност и резервират през вашия сайт. Подходяща е за хотел и за къща за гости – внедряването е онлайн, за обекти в цялата страна. Вижте и <a href="/hotels/">маркетинга за хотели</a> или <a href="/blog/izrabotka-na-uebsajt-za-hotel/">изработка на уебсайт за хотел</a>.
   </p>
   
   <div class="phegon-highlight">
@@ -533,47 +570,10 @@ body.dark-mode .phegon-hero p {
   </div>
 </section>
 
-<section class="phegon-section">
-  <h2>Често задавани въпроси (FAQ)</h2>
-  
-  <div class="phegon-feature">
-    <h4>Какво включва пакетът?</h4>
-    <ul>
-      <li>Пълния изходен код на frontend и backend приложението</li>
-      <li>Детайлна техническа документация с инструкции за инсталация</li>
-      <li>База данни с примерни данни за тестване</li>
-      <li>Поддръжка за персонализация според нуждите на клиента</li>
-      <li>Обучение за администраторите на системата</li>
-    </ul>
-  </div>
-
-  <div class="phegon-feature">
-    <h4>Колко време отнема внедряването?</h4>
-    <ul>
-      <li>Базово внедряване: 2-3 работни дни</li>
-      <li>Персонализация: 1-2 седмици според сложността</li>
-      <li>Обучение на персонала: 1 ден</li>
-      <li>Тестване и финален настройки: 2-3 дни</li>
-      <li>Общо време до пълна функционалност: 2-3 седмици</li>
-    </ul>
-  </div>
-
-  <div class="phegon-feature">
-    <h4>Каква поддръжка се предлага?</h4>
-    <ul>
-      <li>Техническа поддръжка за инсталация и настройка</li>
-      <li>Обучение за администраторите на системата</li>
-      <li>Помощ при персонализация и интеграция</li>
-      <li>Консултации за оптимизация на процесите</li>
-      <li>Достъп до обновления и подобрения</li>
-    </ul>
-  </div>
-</section>
+{% include "faq.html" %}
 
 <section class="phegon-section">
   <h2>Интеграции и разширения</h2>
-  
-  <div class="phegon-benefit">
     <div class="benefit-icon">🔗</div>
     <div class="benefit-content">
       <h4>Възможни интеграции</h4>
