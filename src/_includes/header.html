@@ -310,7 +310,7 @@
                             {% elif entry.title == "Софтуер" %}
                                 <div class="mega-menu">
                                     <a
-                                        {% if page.url == '/software/' or page.url == '/restaurant-pos/' or page.url == '/kiosk/' or page.url == '/skanirane-na-menu/' or page.url == '/shop-pos/' %} class="active" {% endif %}
+                                        {% if page.url == '/software/' or page.url == '/restaurant-pos/' or page.url == '/kiosk/' or page.url == '/skanirane-na-menu/' or page.url == '/shop-pos/' or page.url == '/biznes-softuer/' %} class="active" {% endif %}
                                         href="{{ entry.url }}"
                                         title="Софтуер за хотел, ресторант и магазин"
                                     >
@@ -334,6 +334,9 @@
                                         </a>
                                         <a href="/shop-pos/" {% if page.url == '/shop-pos/' %} class="active" {% endif %} title="Софтуер за магазин">
                                             Магазин
+                                        </a>
+                                        <a href="/biznes-softuer/" {% if page.url == '/biznes-softuer/' %} class="active" {% endif %} title="Бизнес софтуер">
+                                            Бизнес софтуер
                                         </a>
                                     </div>
                                 </div>
