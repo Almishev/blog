@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in collections.all %}
 {%- set u = item.url %}
-{%- if u and u != '/sitemap.xml' and u != '/404.html' and u != '/test-404.html' and u.indexOf('/admin') != 0 %}
+{%- if u and u != '/sitemap.xml' and u != '/404.html' and u != '/test-404.html' and u.indexOf('/admin') != 0 and u.indexOf('/pages/') != 0 %}
   <url>
     <loc>https://www.pirinpixel.com{{ u }}</loc>
     <lastmod>{{ item.date | isoDate }}</lastmod>

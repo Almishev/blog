@@ -1,5 +1,22 @@
 User-agent: *
-Disallow: /admin/
 Allow: /
+Allow: /css/
+Allow: /assets/
+Allow: /images/
+Allow: /blog/
+
+Disallow: /admin/
+Disallow: /404.html
+Disallow: /test-404.html
+Disallow: /pages/
 
 Sitemap: https://www.pirinpixel.com/sitemap.xml
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /404.html
+Disallow: /test-404.html
+Disallow: /pages/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid&yclid
+Host: www.pirinpixel.com

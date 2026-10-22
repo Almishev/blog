@@ -329,9 +329,14 @@
     z-index: -1;
   }
   #navigation #navbar-menu.open {
-    height: 22.25rem;
+    height: auto;
+    max-height: calc(100dvh - 4.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-top: 1.25rem;
+    padding-bottom: 2rem;
     z-index: -100;
+    -webkit-overflow-scrolling: touch;
   }
   #navigation #navbar-menu.open ul li {
     opacity: 1;

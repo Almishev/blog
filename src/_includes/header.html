@@ -105,6 +105,9 @@
   
   .mega-menu {
     position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   
   .mega-menu-content {
@@ -114,11 +117,13 @@
     background-color: transparent;
     min-width: auto;
     padding: 0;
-    margin-top: 0;
+    margin-top: 0.35rem;
+    margin-left: auto;
+    margin-right: auto;
     transform: none;
-    border-left: 2px solid #FFBA19;
-    margin-left: 1rem;
+    border-left: none;
     width: 100% !important;
+    text-align: center;
     flex-direction: column !important;
   }
   
@@ -127,16 +132,15 @@
   }
   
   .mega-menu-content a {
-    padding-left: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
     border-bottom: none;
     font-size: 0.9em;
     color: #ffffff !important;
     text-transform: lowercase !important;
     display: block !important;
-    margin-bottom: 0.2rem;
+    margin: 0 auto 0.2rem;
     width: 100% !important;
+    text-align: center !important;
     white-space: normal !important;
     word-wrap: break-word !important;
     line-height: 1.4 !important;
@@ -181,6 +185,36 @@
   /* Show submenu when parent is active */
   .mega-menu.active .mega-menu-content {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  #navigation #navbar-menu .mega-menu-content a {
+    text-align: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #navigation #navbar-menu.open {
+    height: auto;
+    max-height: calc(100dvh - 4.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #navigation #navbar-menu .mega-menu-content a,
+  #navigation #navbar-menu .mega-menu-content a:link,
+  #navigation #navbar-menu .mega-menu-content a:visited {
+    color: #1a1a1a !important;
+  }
+
+  body.dark-mode #navigation #navbar-menu .mega-menu-content a,
+  body.dark-mode #navigation #navbar-menu .mega-menu-content a:link,
+  body.dark-mode #navigation #navbar-menu .mega-menu-content a:visited {
+    color: #fff !important;
   }
   
   body.dark-mode .mega-menu-content {
@@ -259,8 +293,8 @@
                                         <a href="/hotels/" {% if page.url == '/hotels/' %} class="active" {% endif %} title="Маркетинг за хотели - Професионални решения">
                                             Маркетинг за хотели
                                         </a>
-                                        <a href="/pirinpixel-hotel/" {% if page.url == '/pirinpixel-hotel/' %} class="active" {% endif %} title="Резервационна система за хотели - Система за управление">
-                                            Резервационна система
+                                        <a href="/pirinpixel-hotel/" {% if page.url == '/pirinpixel-hotel/' %} class="active" {% endif %} title="Софтуер за хотел">
+                                            Софтуер за хотел
                                         </a>
                                         <a href="/hotel-marketing-plan/" {% if page.url == '/hotel-marketing-plan/' %} class="active" {% endif %} title="Маркетинг план - Ръководство и шаблон">
                                             Маркетинг план
@@ -270,6 +304,36 @@
                                         </a>
                                         <a href="/hotel-social-media-pack/" {% if page.url == '/hotel-social-media-pack/' %} class="active" {% endif %} title="Социални мрежи - Управление и стратегии">
                                             Социални мрежи
+                                        </a>
+                                    </div>
+                                </div>
+                            {% elif entry.title == "Софтуер" %}
+                                <div class="mega-menu">
+                                    <a
+                                        {% if page.url == '/software/' or page.url == '/restaurant-pos/' or page.url == '/kiosk/' or page.url == '/skanirane-na-menu/' or page.url == '/shop-pos/' %} class="active" {% endif %}
+                                        href="{{ entry.url }}"
+                                        title="Софтуер за хотел, ресторант и магазин"
+                                    >
+                                        Софтуер
+                                    </a>
+                                    <div class="mega-menu-content">
+                                        <a href="/software/" {% if page.url == '/software/' %} class="active" {% endif %} title="Софтуер за хотел, ресторант и магазин">
+                                            Каталог
+                                        </a>
+                                        <a href="/pirinpixel-hotel/" {% if page.url == '/pirinpixel-hotel/' %} class="active" {% endif %} title="Софтуер за хотел">
+                                            Хотел
+                                        </a>
+                                        <a href="/restaurant-pos/" {% if page.url == '/restaurant-pos/' %} class="active" {% endif %} title="Софтуер за ресторант">
+                                            Ресторант
+                                        </a>
+                                        <a href="/kiosk/" {% if page.url == '/kiosk/' %} class="active" {% endif %} title="Киоск за ресторант">
+                                            Киоск
+                                        </a>
+                                        <a href="/skanirane-na-menu/" {% if page.url == '/skanirane-na-menu/' %} class="active" {% endif %} title="Сканиране на меню">
+                                            Меню
+                                        </a>
+                                        <a href="/shop-pos/" {% if page.url == '/shop-pos/' %} class="active" {% endif %} title="Софтуер за магазин">
+                                            Магазин
                                         </a>
                                     </div>
                                 </div>
@@ -329,59 +393,51 @@
         googleTranslateElement.style.display = 'block';
     });
 
-    // Mega menu hover logic with delay
-    const megaMenu = document.querySelector('.mega-menu');
-    const megaMenuContent = document.querySelector('.mega-menu-content');
-    let hideTimeout;
+    const megaMenuStartedOnMobile = window.innerWidth <= 1023;
 
-    if (megaMenu && megaMenuContent) {
-        // Check if we're on mobile
-        const isMobile = window.innerWidth <= 1023;
-        
-        if (!isMobile) {
-            // Desktop behavior - hover with delay
-            megaMenu.addEventListener('mouseenter', function() {
+    document.querySelectorAll('.mega-menu').forEach(function (megaMenu) {
+        const megaMenuContent = megaMenu.querySelector('.mega-menu-content');
+        const megaMenuLink = megaMenu.querySelector('a');
+        let hideTimeout;
+
+        if (!megaMenuContent || !megaMenuLink) {
+            return;
+        }
+
+        if (!megaMenuStartedOnMobile) {
+            megaMenu.addEventListener('mouseenter', function () {
                 clearTimeout(hideTimeout);
                 megaMenuContent.style.display = 'block';
             });
 
-            megaMenu.addEventListener('mouseleave', function() {
-                hideTimeout = setTimeout(function() {
+            megaMenu.addEventListener('mouseleave', function () {
+                hideTimeout = setTimeout(function () {
                     megaMenuContent.style.display = 'none';
-                }, 200); // 200ms delay
+                }, 200);
             });
 
-            megaMenuContent.addEventListener('mouseenter', function() {
+            megaMenuContent.addEventListener('mouseenter', function () {
                 clearTimeout(hideTimeout);
             });
 
-            megaMenuContent.addEventListener('mouseleave', function() {
-                hideTimeout = setTimeout(function() {
+            megaMenuContent.addEventListener('mouseleave', function () {
+                hideTimeout = setTimeout(function () {
                     megaMenuContent.style.display = 'none';
-                }, 200); // 200ms delay
+                }, 200);
             });
         } else {
-            // Mobile behavior - click to toggle
-            const megaMenuLink = megaMenu.querySelector('a');
-            
-            megaMenuLink.addEventListener('click', function(e) {
+            megaMenuLink.addEventListener('click', function (e) {
                 e.preventDefault();
                 megaMenu.classList.toggle('active');
-                
-                if (megaMenu.classList.contains('active')) {
-                    megaMenuContent.style.display = 'block';
-                } else {
-                    megaMenuContent.style.display = 'none';
-                }
+                megaMenuContent.style.display = megaMenu.classList.contains('active') ? 'block' : 'none';
             });
         }
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            const newIsMobile = window.innerWidth <= 1023;
-            if (newIsMobile !== isMobile) {
-                location.reload(); // Reload to reinitialize event listeners
-            }
-        });
-    }
+    });
+
+    window.addEventListener('resize', function () {
+        const nowMobile = window.innerWidth <= 1023;
+        if (nowMobile !== megaMenuStartedOnMobile) {
+            location.reload();
+        }
+    });
 </script>
