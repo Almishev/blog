@@ -1,0 +1,91 @@
+.hw-shop {
+  max-width: 56rem;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.25rem;
+}
+
+.hw-shop h2 {
+  margin: 0 0 0.75rem;
+  color: #1a1a1a;
+}
+
+.hw-shop > p {
+  color: #575757;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.hw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.hw-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hw-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #f7f7f7;
+  border-radius: 0.5rem;
+}
+
+.hw-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+.hw-card p {
+  color: #575757;
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
+}
+
+.hw-card .hw-price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: auto 0 0;
+}
+
+.hw-card .button-solid {
+  margin-top: 1rem;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+body.dark-mode .hw-shop h2,
+body.dark-mode .hw-card h3,
+body.dark-mode .hw-card .hw-price {
+  color: #fff;
+}
+
+body.dark-mode .hw-shop > p,
+body.dark-mode .hw-card p {
+  color: #f5f5f5;
+}
+
+body.dark-mode .hw-card {
+  background: #242424;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .hw-card img {
+  background: #1a1a1a;
+}
+
+@media (max-width: 700px) {
+  .hw-grid {
+    grid-template-columns: 1fr;
+  }
+}

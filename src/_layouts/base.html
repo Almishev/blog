@@ -113,7 +113,7 @@
           "name": {{ item.q | dump | safe }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": {{ item.a | dump | safe }}
+            "text": {{ item.a | replace('<strong>', '') | replace('</strong>', '') | dump | safe }}
           }
         }{% if not loop.last %},{% endif %}
         {%- endfor %}

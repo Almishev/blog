@@ -8,7 +8,7 @@
         <dt>
           <h3 class="faq-q">{{ item.q }}</h3>
         </dt>
-        <dd class="faq-a">{{ item.a }}</dd>
+        <dd class="faq-a">{{ item.a | safe }}</dd>
       </div>
       {%- endfor %}
     </dl>

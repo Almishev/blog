@@ -100,6 +100,20 @@ faq:
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const hardware = params.get('hardware');
+    const place = params.get('place');
+    const hardwareMessages = {
+      'dell-3070': 'Искам Dell OptiPlex 3070 Micro за сървър.',
+      'lenovo-m710q': place
+        ? 'Искам Lenovo ThinkCentre M710q Tiny за ' + place + '.'
+        : 'Искам Lenovo ThinkCentre M710q Tiny.'
+    };
+    const message = document.getElementById('message');
+    if (message && hardwareMessages[hardware] && !message.value) {
+      message.value = hardwareMessages[hardware];
+    }
+
     const form = document.getElementById('cs-form');
     form.addEventListener('submit', function (event) {
       gtag('event', 'submit', {
